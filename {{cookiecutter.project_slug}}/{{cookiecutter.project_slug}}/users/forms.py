@@ -19,8 +19,8 @@ class UserCreationForm(forms.UserCreationForm):
     class Meta(forms.UserCreationForm.Meta):
         model = User
 
-    def clean_username(self):
-        username = self.cleaned_data["username"]
+    def clean_email(self):
+        username = self.cleaned_data["email"]
 
         try:
             User.objects.get(username=username)

@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 (
-                    "username",
+                    "email",
                     models.CharField(
                         error_messages={
                             "unique": "A user with that username already exists."
@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
                         validators=[
                             django.contrib.auth.validators.UnicodeUsernameValidator()
                         ],
-                        verbose_name="username",
+                        verbose_name="email",
                     ),
                 ),
                 (
