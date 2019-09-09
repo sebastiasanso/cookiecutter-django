@@ -2,6 +2,10 @@
 All enhancements and patches to Cookiecutter Django will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2019-09-09]
+### Changed
+- Change username from `username` to `email`. Now user uses email as username identifier (@sebastiasanso)
+
 ## [2019-07-09]
 ### Fixed
 - Always use test settings in pytest (@danihodovic)
