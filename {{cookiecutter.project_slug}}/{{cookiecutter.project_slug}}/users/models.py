@@ -12,6 +12,3 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"email": self.email})
-
-
-## Modificar model, forms + manager

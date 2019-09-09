@@ -14,7 +14,7 @@ class UserChangeForm(forms.UserChangeForm):
 class UserCreationForm(forms.UserCreationForm):
 
     error_message = forms.UserCreationForm.error_messages.update(
-        {"duplicate_username": _("This username has already been taken.")}
+        {"duplicate_email": _("This email has already been taken.")}
     )
 
     class Meta(forms.UserCreationForm.Meta):
@@ -22,11 +22,11 @@ class UserCreationForm(forms.UserCreationForm):
         fields = ('email',)
 
     def clean_email(self):
-        username = self.cleaned_data["email"]
+        email = self.cleaned_data["email"]
 
         try:
-            User.objects.get(username=username)
+            User.objects.get(email=email)
         except User.DoesNotExist:
-            return username
+            return email
 
-        raise ValidationError(self.error_messages["duplicate_username"])
+        raise ValidationError(self.error_messages["duplicate_email"])
