@@ -26,13 +26,12 @@
     <!-- This file stores project-specific CSS -->
     {% endraw %}{% if cookiecutter.js_task_runner == "Gulp" and cookiecutter.use_compressor == "n" %}{% raw %}
     <link href="{% static 'css/project.min.css' %}" rel="stylesheet">
-    {% block extrastyle %}{% endblock %}
     {% endraw %}{% else %}{% raw %}
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
-    {% block extrastyle %}{% endblock %}
     {% endraw %}{% endif %}{% raw %}
     {% endraw %}{% if cookiecutter.use_compressor == "y" %}{% raw %}{% endcompress %}{% endraw %}{% endif %}{% raw %}
     {% endblock %}
+    {% block extrastyle %}{% endblock %}
 
   </head>
 
