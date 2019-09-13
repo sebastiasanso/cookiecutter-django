@@ -292,6 +292,23 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.SocialAccountAdapter"
+# ACCOUNT_FORMS https://django-allauth.readthedocs.io/en/latest/forms.html
+ACCOUNT_FORMS = {
+    'login': '{{cookiecutter.project_slug}}.users.forms.PublicLoginForm',
+    # 'signup': '{{cookiecutter.project_slug}}.users.forms.PublicSignupForm'
+}
+
+# DEFAULT https://django-allauth.readthedocs.io/en/latest/forms.html
+# ACCOUNT_FORMS = {
+#     'login': 'allauth.account.forms.LoginForm',
+#     'signup': 'allauth.account.forms.SignupForm',
+#     'add_email': 'allauth.account.forms.AddEmailForm',
+#     'change_password': 'allauth.account.forms.ChangePasswordForm',
+#     'set_password': 'allauth.account.forms.SetPasswordForm',
+#     'reset_password': 'allauth.account.forms.ResetPasswordForm',
+#     'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
+#     'disconnect': 'allauth.socialaccount.forms.DisconnectForm',
+# }
 
 {% if cookiecutter.use_compressor == 'y' -%}
 # django-compressor

@@ -1,0 +1,14 @@
+.sign-wrapper form {
+    width: 420px;
+}
+
+.sign-wrapper ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sign-wrapper .btn {
+    list-style: none;
+    padding-left: 0;
+    width: 100%
+}

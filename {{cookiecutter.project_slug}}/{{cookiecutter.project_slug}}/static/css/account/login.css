@@ -1,0 +1,12 @@
+.sign-wrapper form .inline-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+#div_id_password {
+    margin-bottom: 5px;
+}
+
+.sign-wrapper form input[type="submit"] {
+    margin-bottom:10px;
+}
