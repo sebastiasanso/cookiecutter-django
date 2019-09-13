@@ -296,7 +296,7 @@ ACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.SocialAccountAdapter"
 # ACCOUNT_FORMS https://django-allauth.readthedocs.io/en/latest/forms.html
 ACCOUNT_FORMS = {
-    'login': 'test_2.users.forms.PublicLoginForm',
+    'login': "{{cookiecutter.project_slug}}.users.forms.PublicLoginForm",
 #     'signup': 'allauth.account.forms.SignupForm',
 #     'add_email': 'allauth.account.forms.AddEmailForm',
 #     'change_password': 'allauth.account.forms.ChangePasswordForm',
