@@ -38,9 +38,9 @@ class UserCreationForm(forms.UserCreationForm):
 ########################
 # PublicLoginForm
 ########################
-CUSTOM_LOGIN_SUBMIT = '<input type="submit" class="btn btn-primary" value="%s" />' % "Sign in"
-CUSTOM_LOGIN_LOST_PASSWORD = '<a href="#">Lost password?</a>'
-CUSTOM_LOGIN_NOT_REGISTERED = '<p>%s <a href={%% url "account_signup" %%}>%s</a></p>' % (
+CUSTOM_LOGIN_SUBMIT = '{% raw %}<input type="submit" class="btn btn-primary" value="%s" />{% endraw %}' % "Sign in"
+CUSTOM_LOGIN_LOST_PASSWORD = '{% raw %}<a href="#">Lost password?</a>{% endraw %}'
+CUSTOM_LOGIN_NOT_REGISTERED = '{% raw %}<p>%s <a href={%% url "account_signup" %%}>%s</a></p>{% endraw %}' % (
     _('Not registered?'), _('Register now!'))
 
 class PublicLoginForm(LoginForm):
@@ -57,4 +57,4 @@ class PublicLoginForm(LoginForm):
             Div('remember', HTML(CUSTOM_LOGIN_LOST_PASSWORD), css_class="inline-group"),
             HTML(CUSTOM_LOGIN_SUBMIT),
             HTML(CUSTOM_LOGIN_NOT_REGISTERED),
-        ) 
+        )
