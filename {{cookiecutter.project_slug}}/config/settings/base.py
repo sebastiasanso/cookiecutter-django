@@ -154,6 +154,8 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
@@ -294,13 +296,7 @@ ACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.SocialAccountAdapter"
 # ACCOUNT_FORMS https://django-allauth.readthedocs.io/en/latest/forms.html
 ACCOUNT_FORMS = {
-    'login': '{{cookiecutter.project_slug}}.users.forms.PublicLoginForm',
-    # 'signup': '{{cookiecutter.project_slug}}.users.forms.PublicSignupForm'
-}
-
-# DEFAULT https://django-allauth.readthedocs.io/en/latest/forms.html
-# ACCOUNT_FORMS = {
-#     'login': 'allauth.account.forms.LoginForm',
+    'login': 'test_2.users.forms.PublicLoginForm',
 #     'signup': 'allauth.account.forms.SignupForm',
 #     'add_email': 'allauth.account.forms.AddEmailForm',
 #     'change_password': 'allauth.account.forms.ChangePasswordForm',
@@ -308,7 +304,7 @@ ACCOUNT_FORMS = {
 #     'reset_password': 'allauth.account.forms.ResetPasswordForm',
 #     'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
 #     'disconnect': 'allauth.socialaccount.forms.DisconnectForm',
-# }
+}
 
 {% if cookiecutter.use_compressor == 'y' -%}
 # django-compressor
