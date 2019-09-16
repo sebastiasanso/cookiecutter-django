@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, HTML
-from allauth.account.forms import LoginForm
+from allauth.account.forms import LoginForm, SignupForm, PasswordField
 
 User = get_user_model()
 
@@ -57,4 +57,30 @@ class PublicLoginForm(LoginForm):
             Div('remember', HTML(CUSTOM_LOGIN_LOST_PASSWORD), css_class="inline-group"),
             HTML(CUSTOM_LOGIN_SUBMIT),
             HTML(CUSTOM_LOGIN_NOT_REGISTERED),
+        )
+
+########################
+# PublicSignupForm
+########################
+CUSTOM_SIGNUP_SUBMIT = '{% raw %}<input type="submit" class="btn btn-primary" value="%s" />{% endraw %}' % "Sign Up"
+
+class PublicSignupForm(SignupForm):
+
+    class Meta():
+        model = User
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Confirma tu contraseña
+        self.fields['password2'] = PasswordField(label=_("Re-enter password"))
+
+        for field in self.fields:
+            del self.fields[field].widget.attrs['placeholder']
+
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            'email',
+            'password1',
+            'password2',
+            HTML(CUSTOM_SIGNUP_SUBMIT),
         )

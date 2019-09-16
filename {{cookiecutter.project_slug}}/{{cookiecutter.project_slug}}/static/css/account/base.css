@@ -1,5 +1,5 @@
 .sign-wrapper form {
-    width: 420px;
+    max-width: 420px;
 }
 
 .sign-wrapper ul {
