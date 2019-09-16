@@ -53,7 +53,7 @@ class PublicLoginForm(LoginForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields:
-            del self.fields[field].widget.attrs['placeholder']
+            self.fields[field].widget.attrs.pop("placeholder", None)
         self.helper = FormHelper()
         self.helper.layout = Layout(
             'login',
@@ -81,7 +81,7 @@ class PublicSignupForm(SignupForm):
         self.fields['password2'] = PasswordField(label=_("Re-enter password"))
 
         for field in self.fields:
-            del self.fields[field].widget.attrs['placeholder']
+            self.fields[field].widget.attrs.pop("placeholder", None)
 
         self.helper = FormHelper()
         self.helper.layout = Layout(
