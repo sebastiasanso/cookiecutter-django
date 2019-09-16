@@ -35,6 +35,7 @@ class UserCreationForm(forms.UserCreationForm):
 
         raise ValidationError(self.error_messages["duplicate_email"])
 
+
 ########################
 # PublicLoginForm
 ########################
@@ -43,6 +44,7 @@ CUSTOM_LOGIN_LOST_PASSWORD = '{% raw %}<a href="#">Lost password?</a>{% endraw %
 CUSTOM_LOGIN_NOT_REGISTERED = '{% raw %}<p>%s <a href={%% url "account_signup" %%}>%s</a></p>{% endraw %}' % (
     _('Not registered?'), _('Register now!'))
 
+
 class PublicLoginForm(LoginForm):
 
     class Meta():
@@ -50,6 +52,8 @@ class PublicLoginForm(LoginForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        for field in self.fields:
+            del self.fields[field].widget.attrs['placeholder']
         self.helper = FormHelper()
         self.helper.layout = Layout(
             'login',
@@ -59,10 +63,12 @@ class PublicLoginForm(LoginForm):
             HTML(CUSTOM_LOGIN_NOT_REGISTERED),
         )
 
+
 ########################
 # PublicSignupForm
 ########################
 CUSTOM_SIGNUP_SUBMIT = '{% raw %}<input type="submit" class="btn btn-primary" value="%s" />{% endraw %}' % "Sign Up"
+
 
 class PublicSignupForm(SignupForm):
 
