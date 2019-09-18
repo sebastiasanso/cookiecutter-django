@@ -1,14 +1,23 @@
-.sign-wrapper form {
+.sign-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-wrapper {
+    width: 100%;
     max-width: 420px;
-}
-
-.sign-wrapper ul {
+    margin: 0 20px;
+  }
+  
+  .sign-wrapper ul {
     list-style: none;
     padding-left: 0;
-}
-
-.sign-wrapper .btn {
+  }
+  
+  .sign-wrapper .btn {
     list-style: none;
     padding-left: 0;
-    width: 100%
-}
+    width: 100%;
+  }
+  
