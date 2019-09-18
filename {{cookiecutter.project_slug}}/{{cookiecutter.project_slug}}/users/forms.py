@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model, forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
-from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, HTML
 from allauth.account.forms import LoginForm, SignupForm, PasswordField

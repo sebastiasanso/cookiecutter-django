@@ -7,7 +7,8 @@ class UsersConfig(AppConfig):
     verbose_name = _("Users")
 
     def ready(self):
-        try:
-            import {{ cookiecutter.project_slug }}.users.signals  # noqa F401
-        except ImportError:
-            pass
+        pass
+        # try:
+        #     import {{ cookiecutter.project_slug }}.users.signals  # noqa F401
+        # except ImportError:
+        #     pass
