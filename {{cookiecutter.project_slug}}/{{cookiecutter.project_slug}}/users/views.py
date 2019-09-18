@@ -39,6 +39,15 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 user_update_view = UserUpdateView.as_view()
 
 
+class CurrentUserDetailView(LoginRequiredMixin, DetailView):
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+current_user_detail_view = CurrentUserDetailView.as_view()
+
+
 class UserRedirectView(LoginRequiredMixin, RedirectView):
 
     permanent = False

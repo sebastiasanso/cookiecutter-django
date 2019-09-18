@@ -1,0 +1,20 @@
+{
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".vscode": true,
+        "**/*.pyc": true,
+        "**/__pycache__/": true
+    },
+    "window.zoomLevel": 0.15,
+    "python.jediEnabled": false,
+    "python.pythonPath": "C:\\Users\\sebas\\Documents\\projects\\python\\virtualenvironments\\test_template\\Scripts\\python.exe",
+}
