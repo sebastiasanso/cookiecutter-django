@@ -219,31 +219,6 @@ For local development, see the following:
 .. _`Developing locally`: http://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html
 .. _`Developing locally using docker`: http://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html
 
-User / Workspace settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-```javascript
-{
-    "editor.formatOnSave": true,
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        ".vscode": true,
-        "**/*.pyc": true,
-        "**/__pycache__/": true
-    },
-    "window.zoomLevel": 0.15,
-    "python.jediEnabled": false,
-    "python.pythonPath": "../virtualenvironments/test_template/Scripts",
-}
-```
 
 Community
 -----------
